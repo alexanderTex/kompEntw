@@ -1,0 +1,41 @@
+Komponentenbasierte Entwicklung
+Übung 1
+
+Aufg 1-1
+  1.  INPUT:  java -version
+      OUTPUT: java version "1.8.0_101"
+              Java(TM) SE Runtime Environment (build 1.8.0_101-b13)
+              Java HotSpot(TM) 64-Bit Server VM (build 25.101-b13, mixed mode)
+
+      INPUT:  which java
+      OUTPUT: /usr/bin/java
+
+      INPUT:  which javac
+      OUTPUT: /usr/bin/javac
+
+  2.  INPUT:  mvn -version
+      OUTPUT: Maven home: /usr/share/maven
+              Java version: 1.8.0_101, vendor: Oracle Corporation
+              Java home: /usr/lib/jvm/java-8-oracle/jre
+              Default locale: de_DE, platform encoding: UTF-8
+              OS name: "linux", version: "4.4.0-38-generic", arch: "amd64", family: "unix"
+
+  3.
+    a.  Apache Tomcat ist ein Open-Source-Webserver/Webcontainer, der in Java
+        geschriebene Anwendungen auf  Servlet- bzw. JSP-Basis ausführen kann.
+        JSP = JavaServer Pages
+        Java Servlet = Java-Klassen, dessen Instanzen innerhalb der Server die
+                        Anfragen der Clients entgegennehmen.
+    b.
+      i.    /usr/share/tomcat7/bin
+      ii.   /var/lib/tomcat7/webapps
+      iii.  /var/log/tomcat7
+      Übersicht im vz:
+        /var/lib/tomcat7/
+        /etc/tomcat7
+        /etc/init.d/tomcat7 -> Service
+    c.
+        Die Applikation befindet sich im Verzeichnis /var/lib/tomcat7/<APPNAME>.
+        Dazu gehört die Datei web.xml, welche die Entwicklungsbeschreibung
+        (Web Application Deployment Descriptor)
+        enhält. Sowie die JSP-Daten, Klassen und Bibliotheken

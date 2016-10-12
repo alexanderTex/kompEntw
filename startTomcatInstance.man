@@ -1,0 +1,2 @@
+Run kompEntwTomcatInstance/bin/startup.sh to start your Tomcat instance
+Shutdown kompEntwTomcatInstance/bin/shutdown.sh
