@@ -39,3 +39,19 @@ Aufg 1-1
         Dazu gehört die Datei web.xml, welche die Entwicklungsbeschreibung
         (Web Application Deployment Descriptor)
         enhält. Sowie die JSP-Daten, Klassen und Bibliotheken
+    d.
+        Instance: kompEntwTomcatInstance
+    e.
+        Nachdem Hochfahren: Eine weiße Seite.
+        Nachdem Runterfahren: Verbindungsfehler
+
+    4.
+      Hilfestellung:
+        // Fehlende Daten
+        http://askubuntu.com/questions/310767/how-should-i-install-apache-tomcat-7-for-use-with-eclipse#464866
+
+        // Verlinkung mit der Datei tomcat-juli.jar
+        http://stackoverflow.com/questions/1392383/java-lang-noclassdeffounderror-org-apache-juli-logging-logfactory
+    10.
+      Die Ausgabe 'HelloWord started!' wird ausgegeben.
+      GRUND: 

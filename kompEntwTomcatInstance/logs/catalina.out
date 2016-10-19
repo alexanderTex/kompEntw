@@ -1,72 +1,72 @@
-Okt 12, 2016 12:54:26 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
 WARNUNG: Problem with directory [/usr/share/tomcat7/common/classes], exists: [false], isDirectory: [false], canRead: [false]
-Okt 12, 2016 12:54:26 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
 WARNUNG: Problem with directory [/usr/share/tomcat7/common], exists: [false], isDirectory: [false], canRead: [false]
-Okt 12, 2016 12:54:26 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
 WARNUNG: Problem with directory [/usr/share/tomcat7/server/classes], exists: [false], isDirectory: [false], canRead: [false]
-Okt 12, 2016 12:54:26 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
 WARNUNG: Problem with directory [/usr/share/tomcat7/server], exists: [false], isDirectory: [false], canRead: [false]
-Okt 12, 2016 12:54:26 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
 WARNUNG: Problem with directory [/usr/share/tomcat7/shared/classes], exists: [false], isDirectory: [false], canRead: [false]
-Okt 12, 2016 12:54:26 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
 WARNUNG: Problem with directory [/usr/share/tomcat7/shared], exists: [false], isDirectory: [false], canRead: [false]
-Okt 12, 2016 12:54:27 PM org.apache.catalina.startup.VersionLoggerListener log
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.VersionLoggerListener log
 INFORMATION: Server version:        Apache Tomcat/7.0.68 (Ubuntu)
-Okt 12, 2016 12:54:27 PM org.apache.catalina.startup.VersionLoggerListener log
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.VersionLoggerListener log
 INFORMATION: Server built:          Jun 27 2016 18:13:17 UTC
-Okt 12, 2016 12:54:27 PM org.apache.catalina.startup.VersionLoggerListener log
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.VersionLoggerListener log
 INFORMATION: Server number:         7.0.68.0
-Okt 12, 2016 12:54:27 PM org.apache.catalina.startup.VersionLoggerListener log
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.VersionLoggerListener log
 INFORMATION: OS Name:               Linux
-Okt 12, 2016 12:54:27 PM org.apache.catalina.startup.VersionLoggerListener log
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.VersionLoggerListener log
 INFORMATION: OS Version:            4.4.0-38-generic
-Okt 12, 2016 12:54:27 PM org.apache.catalina.startup.VersionLoggerListener log
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.VersionLoggerListener log
 INFORMATION: Architecture:          amd64
-Okt 12, 2016 12:54:27 PM org.apache.catalina.startup.VersionLoggerListener log
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.VersionLoggerListener log
 INFORMATION: Java Home:             /usr/lib/jvm/java-8-oracle/jre
-Okt 12, 2016 12:54:27 PM org.apache.catalina.startup.VersionLoggerListener log
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.VersionLoggerListener log
 INFORMATION: JVM Version:           1.8.0_101-b13
-Okt 12, 2016 12:54:27 PM org.apache.catalina.startup.VersionLoggerListener log
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.VersionLoggerListener log
 INFORMATION: JVM Vendor:            Oracle Corporation
-Okt 12, 2016 12:54:27 PM org.apache.catalina.startup.VersionLoggerListener log
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.VersionLoggerListener log
 INFORMATION: CATALINA_BASE:         /home/05/48965/kompEntw/kompEntwTomcatInstance
-Okt 12, 2016 12:54:27 PM org.apache.catalina.startup.VersionLoggerListener log
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.VersionLoggerListener log
 INFORMATION: CATALINA_HOME:         /usr/share/tomcat7
-Okt 12, 2016 12:54:27 PM org.apache.catalina.startup.VersionLoggerListener log
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.VersionLoggerListener log
 INFORMATION: Command line argument: -Djava.util.logging.config.file=/home/05/48965/kompEntw/kompEntwTomcatInstance/conf/logging.properties
-Okt 12, 2016 12:54:27 PM org.apache.catalina.startup.VersionLoggerListener log
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.VersionLoggerListener log
 INFORMATION: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
-Okt 12, 2016 12:54:27 PM org.apache.catalina.startup.VersionLoggerListener log
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.VersionLoggerListener log
 INFORMATION: Command line argument: -Djava.awt.headless=true
-Okt 12, 2016 12:54:27 PM org.apache.catalina.startup.VersionLoggerListener log
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.VersionLoggerListener log
 INFORMATION: Command line argument: -Xmx128M
-Okt 12, 2016 12:54:27 PM org.apache.catalina.startup.VersionLoggerListener log
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.VersionLoggerListener log
 INFORMATION: Command line argument: -Djava.endorsed.dirs=/usr/share/tomcat7/endorsed
-Okt 12, 2016 12:54:27 PM org.apache.catalina.startup.VersionLoggerListener log
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.VersionLoggerListener log
 INFORMATION: Command line argument: -Dcatalina.base=/home/05/48965/kompEntw/kompEntwTomcatInstance
-Okt 12, 2016 12:54:27 PM org.apache.catalina.startup.VersionLoggerListener log
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.VersionLoggerListener log
 INFORMATION: Command line argument: -Dcatalina.home=/usr/share/tomcat7
-Okt 12, 2016 12:54:27 PM org.apache.catalina.startup.VersionLoggerListener log
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.VersionLoggerListener log
 INFORMATION: Command line argument: -Djava.io.tmpdir=/home/05/48965/kompEntw/kompEntwTomcatInstance/temp
-Okt 12, 2016 12:54:27 PM org.apache.coyote.AbstractProtocol init
+Okt 12, 2016 2:11:08 PM org.apache.coyote.AbstractProtocol init
 INFORMATION: Initializing ProtocolHandler ["http-bio-8080"]
-Okt 12, 2016 12:54:27 PM org.apache.catalina.startup.Catalina load
-INFORMATION: Initialization processed in 372 ms
-Okt 12, 2016 12:54:27 PM org.apache.catalina.core.StandardService startInternal
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.Catalina load
+INFORMATION: Initialization processed in 266 ms
+Okt 12, 2016 2:11:08 PM org.apache.catalina.core.StandardService startInternal
 INFORMATION: Starting service Catalina
-Okt 12, 2016 12:54:27 PM org.apache.catalina.core.StandardEngine startInternal
+Okt 12, 2016 2:11:08 PM org.apache.catalina.core.StandardEngine startInternal
 INFORMATION: Starting Servlet Engine: Apache Tomcat/7.0.68 (Ubuntu)
-Okt 12, 2016 12:54:27 PM org.apache.coyote.AbstractProtocol start
+Okt 12, 2016 2:11:08 PM org.apache.coyote.AbstractProtocol start
 INFORMATION: Starting ProtocolHandler ["http-bio-8080"]
-Okt 12, 2016 12:54:27 PM org.apache.catalina.startup.Catalina start
-INFORMATION: Server startup in 28 ms
-Okt 12, 2016 12:56:25 PM org.apache.catalina.core.StandardServer await
+Okt 12, 2016 2:11:08 PM org.apache.catalina.startup.Catalina start
+INFORMATION: Server startup in 25 ms
+Okt 12, 2016 2:11:25 PM org.apache.catalina.core.StandardServer await
 INFORMATION: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
-Okt 12, 2016 12:56:25 PM org.apache.coyote.AbstractProtocol pause
+Okt 12, 2016 2:11:25 PM org.apache.coyote.AbstractProtocol pause
 INFORMATION: Pausing ProtocolHandler ["http-bio-8080"]
-Okt 12, 2016 12:56:25 PM org.apache.catalina.core.StandardService stopInternal
+Okt 12, 2016 2:11:26 PM org.apache.catalina.core.StandardService stopInternal
 INFORMATION: Stopping service Catalina
-Okt 12, 2016 12:56:25 PM org.apache.coyote.AbstractProtocol stop
+Okt 12, 2016 2:11:26 PM org.apache.coyote.AbstractProtocol stop
 INFORMATION: Stopping ProtocolHandler ["http-bio-8080"]
-Okt 12, 2016 12:56:25 PM org.apache.coyote.AbstractProtocol destroy
+Okt 12, 2016 2:11:26 PM org.apache.coyote.AbstractProtocol destroy
 INFORMATION: Destroying ProtocolHandler ["http-bio-8080"]
