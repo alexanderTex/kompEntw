@@ -12,23 +12,22 @@
 
 <body>
 
-    <h:form id="form">
-    
+    <h:form id="form">    
 		<h:outputText value="Meine ToDo-Liste" class="tableheader"/>
 		<!-- //TODO -->
-		<h:outputText value="von #{toDoListMB.toDoList.toDos.size()}"/>
+		<br/>
+		<h:outputText value="Derzeit sind #{toDoListMB.toDoList.toDoCountDone()} von #{toDoListMB.toDoList.toDos.size()} ToDos erledigt!"/>
 		<!-- //value => Daten die wir darstellen wollen ; var => Datentyp der Daten -->
 		<h:dataTable value="#{toDoListMB.toDoList.toDos}" var="toDo"> 
 			<h:column>
 				<f:facet name="header">ToDo</f:facet>
-				<!-- //ToDo entries -->				
-				#{toDo.name}
+				<!-- //ToDo entries -->	
+				<h:outputText value="#{toDo.name}"></h:outputText>			
 			</h:column>
 			<h:column>
 				<f:facet name="header"></f:facet>
 				<!-- //CheckBoxes -->
 				<h:selectBooleanCheckbox value="#{toDo.done}"></h:selectBooleanCheckbox>
-				#{toDo.done}
 			</h:column>
 		</h:dataTable>
 		<h:commandButton id="save" value="Save" action="#{toDoListMB.save}"/>	
