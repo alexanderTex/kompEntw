@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
     xmlns:f="http://xmlns.jcp.org/jsf/core"
     xmlns:h="http://xmlns.jcp.org/jsf/html">
-    
+
 <h:head>
 	<h:outputStylesheet library="css" name="todo.css" />
 	<title>ToDo-Liste</title>
@@ -12,17 +12,18 @@
 
 <body>
 
-    <h:form id="form">    
+    <h:form id="form">
 		<h:outputText value="Meine ToDo-Liste" class="tableheader"/>
 		<!-- //TODO -->
 		<br/>
+    <!-- better with toDoListMB.toDoList.Count  - as getter {avoid logic in xhtml}, needs getter in toDoList ( getDoneCount() ) jsf searches for getter automaticly -->
 		<h:outputText value="Derzeit sind #{toDoListMB.toDoList.toDoCountDone()} von #{toDoListMB.toDoList.toDos.size()} ToDos erledigt!"/>
 		<!-- //value => Daten die wir darstellen wollen ; var => Datentyp der Daten -->
-		<h:dataTable value="#{toDoListMB.toDoList.toDos}" var="toDo"> 
+		<h:dataTable value="#{toDoListMB.toDoList.toDos}" var="toDo">
 			<h:column>
 				<f:facet name="header">ToDo</f:facet>
-				<!-- //ToDo entries -->	
-				<h:outputText value="#{toDo.name}"></h:outputText>			
+				<!-- //ToDo entries -->
+				<h:outputText value="#{toDo.name}"></h:outputText>
 			</h:column>
 			<h:column>
 				<f:facet name="header"></f:facet>
@@ -30,8 +31,8 @@
 				<h:selectBooleanCheckbox value="#{toDo.done}"></h:selectBooleanCheckbox>
 			</h:column>
 		</h:dataTable>
-		<h:commandButton id="save" value="Save" action="#{toDoListMB.save}"/>	
-	</h:form>  
-	
+		<h:commandButton id="save" value="Save" action="#{toDoListMB.save}"/>
+	</h:form>
+
 </body>
 </html>
