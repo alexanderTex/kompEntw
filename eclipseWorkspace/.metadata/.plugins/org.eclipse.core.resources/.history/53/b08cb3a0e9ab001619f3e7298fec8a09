@@ -1,0 +1,55 @@
+package de.htw_berlin.ai_bachelor.kbe.tree;
+
+import java.awt.List;
+import java.util.*;
+
+public class TreeTest {
+	public static String export(Tree<?> t) {
+		
+		String expo = "";
+		
+		if(t != null)
+		{
+			expo = t.getValue() + "\n" + export(t.getLeft()) + export(t.getRight());
+		}
+		
+		return expo;
+	}
+	
+	public static void main(String... a) {
+		Tree<Integer> t4 = new Tree<Integer>(1, new Tree<Integer>(23,null,null), new Tree<Integer>(42, new Tree<Integer>(65, null, null),null)); 
+		System.out.println(export(t4));
+		
+		System.out.println(TreeSum.sum(t4));
+		
+		ComparePredicate<Integer> cp = new ComparePredicate(0,67);
+		
+		System.out.println(cp.isOk(t4));
+	}
+	
+	public static Collection<V extends Comparable<V>> filterElements(ComparePredicate<V> cp, Tree<V> t) {
+		
+		Collection<V> ret = new ArrayList<V>();
+		
+		if(t != null)
+		{
+			if(cp.isOk(t))
+			{
+				ret.add(t.getValue());
+			}
+			
+			if(t.getLeft() != null)
+			{
+				ret.addAll(filterElements(cp, t.getLeft());
+				
+			}
+			
+			if(t.getRight() != null)
+			{
+				ret = ret && cp.isOk(t.getRight());
+			}
+		}
+				 
+	}
+		
+}

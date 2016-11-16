@@ -1,0 +1,22 @@
+package de.htw_berlin.ai_bachelor.kbe.tree;
+
+
+public class TreeTest {
+	public static String export(Tree<?> t) {
+		
+		String expo = "";
+		
+		if(t != null)
+		{
+			expo = t.getValue() + "\n" + export(t.getLeft()) + "\n" + export(t.getRight()) + "\n";
+		}
+		
+		return expo;
+	}
+	
+	public static void main(String... a) {
+		Tree<Integer> t4 = new Tree<Integer>(1, new Tree<Integer>(23,null,null), new Tree<Integer>(42, new Tree<Integer>(65, null, null),null)); 
+		System.out.println(export(t4));
+	}
+		
+}
