@@ -2,45 +2,47 @@ package de.htw_berlin.ai_bachelor.kbe.counter;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 public class CounterFactoryTest {
 
 	@Test
 	public void incrementCounterSimple(){
 		String typ = "simple";
 		
-		System.out.println("CounterSimple increment test!");
-		System.out.println("CounterSimple count before = " + CounterFactory.getCounterInstance(typ).getCounter());
 		
+		assertEquals(CounterFactory.getCounterInstance(typ).getClass(), CounterSimple.class);
+		/*
 		CounterFactory.getCounterInstance(typ).increment();
 		
-		System.out.println("CounterSimple count after = " + CounterFactory.getCounterInstance(typ).getCounter());
-			
+		assertEquals(CounterFactory.getCounterInstance(typ).getCounter(), 1);
+		*/
 	}
 	
 	@Test
 	public void incrementCounterDouble(){
 		String typ = "double";
 		
-		System.out.println("CounterDouble increment test!");
-		System.out.println("CounterDouble count before = " + CounterFactory.getCounterInstance(typ).getCounter());
+		assertEquals(CounterFactory.getCounterInstance(typ).getClass(), CounterDouble.class);
 		
+		/*
 		CounterFactory.getCounterInstance(typ).increment();
 		
-		System.out.println("CounterDouble count after = " + CounterFactory.getCounterInstance(typ).getCounter());
-			
+		assertEquals(CounterFactory.getCounterInstance(typ).getCounter(), 2);
+		*/	
 	}
 	
 	@Test
 	public void incrementCounterTriple(){
 		String typ = "triple";
 		
-		System.out.println("CounterTriple increment test!");
-		System.out.println("CounterTriple count before = " + CounterFactory.getCounterInstance(typ).getCounter());
+		assertEquals(CounterFactory.getCounterInstance(typ).getClass(), CounterTriple.class);
 		
+		/*
 		CounterFactory.getCounterInstance(typ).increment();
 		
-		System.out.println("CounterTriple count after = " + CounterFactory.getCounterInstance(typ).getCounter());
-			
+		assertEquals(CounterFactory.getCounterInstance(typ).getCounter(), 3);
+		*/	
 	}
 	
 	
