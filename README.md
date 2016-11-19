@@ -9,6 +9,10 @@ fertig
 fertig
 
 ### Übung 3
-- Teilaufgabe a bis f => fertig
-- Teilaufgabe g => Die Anzahl der Elemente ist fertig
-- Telaufgabe g/2 und h fehlen
+fertig
+
+### Übung 4
+fertig
+
+### Übung 5
+fertig
