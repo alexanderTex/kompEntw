@@ -1,0 +1,39 @@
+package de.htw_berlin.ai_bachelor.kbe;
+
+import java.util.Arrays;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	
+    	CreationInfo creationInfo = MyAnnotationTester.class.getAnnotation(CreationInfo.class);
+    	MyAnnotationTester.c
+    	    	
+    	if (creationInfo != null)
+    		printCreationInfo(creationInfo);
+    	else
+    		System.out.println("Keine " + CreationInfo.class.getSimpleName() + "-Annotation vorhanden.");
+    }
+    
+    
+    private static <T> void printCreationInfo(CreationInfo creationInfo, Class<T> ref) 
+    {
+    	System.out.println("author: " + creationInfo.author());
+    	System.out.println("description: " + creationInfo.description());
+    	System.out.println("tags: " + Arrays.toString(creationInfo.tags()));
+    	if(creationInfo.baseclass())
+    	{
+    		
+    	}
+    	
+    	if(creationInfo.interfaces())
+    	{
+    		
+    	}
+    }
+}

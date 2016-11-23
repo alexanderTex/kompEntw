@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;kbe_ue6_1-annotation&apos;" deleteContents="false" description="Delete resource &apos;kbe_ue6_1-annotation&apos;" element1="/kbe_ue6_1-annotation" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1479891937666"/>
+</session>
