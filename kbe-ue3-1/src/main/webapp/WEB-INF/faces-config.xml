@@ -17,4 +17,10 @@
 	</navigation-case>
 </navigation-rule>
 
+<lifecycle>
+	<phase-listener>
+		de.htw_berlin.ai_bachelor.kbe.MyPhaseListener
+	</phase-listener>
+</lifecycle>
+
 </faces-config>
