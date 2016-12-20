@@ -1,0 +1,37 @@
+package de.htw_berlin.ai_bachelor.kbe;
+
+import java.io.IOException;
+import java.io.OutputStream;
+import java.security.cert.Extension;
+import java.util.Collection;
+import java.util.Iterator;
+
+@CreationInfo(description=" This is the extended annotationtester", tags={"Dummy", "stuff"})
+public class ExtendedAnnotationTester extends MyAnnotationTester implements Dummy, Extension {
+
+	public String getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean isCritical() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public byte[] getValue() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void encode(OutputStream out) throws IOException {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void SayYourDumb() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

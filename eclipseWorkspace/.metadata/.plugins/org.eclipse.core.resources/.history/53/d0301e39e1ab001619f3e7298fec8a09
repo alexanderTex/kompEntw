@@ -1,0 +1,20 @@
+package de.htw_berlin.ai_bachelor.kbe.tree;
+
+
+public class TreeTest {
+	public static String export(Tree<?> t) {
+		
+		String expo = "";
+		
+		if(t != null)
+		{
+			expo += t.getValue() + "\n" + export(t.getLeft()) + "\n" + export(t.getRight()) + "\n";
+		
+		return expo;
+	}
+	
+	public static void main(String... a) {
+		
+	}
+		
+}

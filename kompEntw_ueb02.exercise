@@ -4,6 +4,37 @@ Komponentenbasierte Entwicklung
 Aufg 2-1
   a.)
     I.  Nein, da Java EE als Grundvoraussetzung Java SE voraussetzt.
-    II. - objectrelation mapping
-        - distributed multi-tier architecture
-        - web sevices
+    II. 	- objectrelation mapping
+        	- distributed multi-tier architecture
+        	- web sevices
+    III./IV	- Convention over configuration 
+		- annotations	
+    V./VI	- Mehrschichtenarchitektur	Client - JavaSE server - DB Server	  
+    VII.	- Dient WebAnwendungen nicht für verteilte Systeme
+  b.)
+	1. Sind Schnittstellen zwischen Komponentne
+	2. EJB- und WebContainer - EJB = Koordiniert die Ausführung der Webseiten, Servlets und zusätzliche EJB Komponenten für Java EE Applikationen.
+	3. A Java EE server provides EJB and web containers which manages the execution.
+	4. Ist ein Servlet/JSP container
+  c.)
+	
+  d.)	
+
+    Develop the web component code.
+
+    Develop the web application deployment descriptor, if necessary.
+
+    Compile the web application components and helper classes referenced by the components.
+
+    Optionally, package the application into a deployable unit.
+
+    Deploy the application into a web container.
+
+    Access a URL that references the web application.
+
+  e.)
+	FlowScoped	Durch die Seite dirigieren "Fluß"
+	Dependent	Abhängig von anderen Beans
+  f.)
+	Es existiert kein FlowScope und auch kein Dependent
+
