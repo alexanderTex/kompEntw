@@ -1,6 +1,10 @@
 package de.htw_berlin.ai_bachelor.kbe.checklist.model;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 
 public class ToDo implements Serializable {
 	
@@ -8,15 +12,23 @@ public class ToDo implements Serializable {
 
 	private String name;
 	private boolean done = false;
+	private Date date; //faelligkeitsdatum
 	
 	private ToDo(String name, boolean done) {
 		super();
 		this.name = name;
-		this.done = done;
+		this.done = done;	
+		
+		Calendar c = Calendar.getInstance();
+		
+		c.add(Calendar.DATE, 1);
+		
+		this.date = c.getTime();	
+		
 	}
 	
 	public ToDo(String name) {
-		this(name,false);
+		this(name,false);		
 	}
 	
 	public boolean isDone() {
@@ -30,6 +42,13 @@ public class ToDo implements Serializable {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public Date getDate() {		
+       	return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 }

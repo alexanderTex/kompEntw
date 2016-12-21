@@ -4,10 +4,6 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
 
-<application>
-    <message-bundle>vvskMessages_de</message-bundle>
-</application>
-
 <navigation-rule>
 <!-- //TODO -->
 	<from-view-id>/editToDoList.xhtml</from-view-id>
@@ -19,7 +15,7 @@
 
 <lifecycle>
 	<phase-listener>
-		de.htw_berlin.ai_bachelor.kbe.MyPhaseListener
+		<!-- de.htw_berlin.ai_bachelor.kbe.MyPhaseListener -->
 	</phase-listener>
 </lifecycle>
 
