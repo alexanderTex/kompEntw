@@ -1,0 +1,30 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+	<h:outputStylesheet library="css" name="todo.css" />
+	<title>Edit-Intervals</title>
+</h:head>
+
+<body>
+
+	
+	<h:form id="form">
+		<h:outputText value="Prio-Interval"></h:outputText>
+		<p></p>
+		<p></p>
+		<h:outputText value="min = #{intervallMB.intervall.min}"></h:outputText>
+		<p></p>
+		<h:outputText value="max ="></h:outputText><h:inputText id="max" value="#{intervallMB.intervall.max}" required="true"></h:inputText>
+		<p></p>
+		<h:commandButton id="save" value="Save" action="#{intervallMB.save}"/>
+	
+	</h:form>
+
+</body>
+
+</html>

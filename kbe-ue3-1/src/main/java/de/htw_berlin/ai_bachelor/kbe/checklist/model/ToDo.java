@@ -1,9 +1,12 @@
 package de.htw_berlin.ai_bachelor.kbe.checklist.model;
 
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
+import javax.validation.constraints.Future;
+
+import de.htw_berlin.ai_bachelor.kbe.MyInterval;
 
 
 public class ToDo implements Serializable {
@@ -12,9 +15,14 @@ public class ToDo implements Serializable {
 
 	private String name;
 	private boolean done = false;
-	private Date date; //faelligkeitsdatum
 	
-	private ToDo(String name, boolean done) {
+	@Future(message="Das Fälligkeitsdatum muss in der Zukunft liegen")
+	private Date date = new Date(); //faelligkeitsdatum
+	
+	@MyInterval
+	private int prio;
+	
+	public ToDo(String name, boolean done) {
 		super();
 		this.name = name;
 		this.done = done;	
@@ -23,7 +31,9 @@ public class ToDo implements Serializable {
 		
 		c.add(Calendar.DATE, 1);
 		
-		this.date = c.getTime();	
+		this.date = c.getTime();
+		
+		prio = 1;
 		
 	}
 	
@@ -47,8 +57,17 @@ public class ToDo implements Serializable {
 	public Date getDate() {		
        	return date;
 	}
+	
 	public void setDate(Date date) {
 		this.date = date;
+	}
+	
+	public int getPrio() {		
+       	return prio;
+	}
+	
+	public void setPrio(int prio) {
+		this.prio = prio;
 	}
 
 }

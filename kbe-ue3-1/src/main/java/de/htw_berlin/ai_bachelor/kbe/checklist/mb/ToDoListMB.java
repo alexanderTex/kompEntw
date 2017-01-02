@@ -34,4 +34,10 @@ public class ToDoListMB implements Serializable {
     public String save() {
     	return "save";
     }
+    
+	//Should be called if the Button "Edit-Interval" is pushed.
+	//Needs configuration in the faces-config.xml.
+    public String editInterval() {
+    	return "editInterval";
+    }
 }
