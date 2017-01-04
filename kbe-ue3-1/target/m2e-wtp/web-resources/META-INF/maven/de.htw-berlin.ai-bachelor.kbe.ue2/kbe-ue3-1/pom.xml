@@ -26,7 +26,25 @@
   	<dependency>
 	  	<groupId>org.hibernate</groupId>
 	    <artifactId>hibernate-validator</artifactId>
-	    <version>5.1.3.Final</version>
+	    <version>5.2.4.Final</version>
+  	</dependency>
+  	
+  	  	<dependency>
+	  	<groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-core</artifactId>
+	    <version>5.2.5.Final</version>
+  	</dependency>
+
+  	<dependency>
+	  	<groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-entitymanager</artifactId>
+	    <version>5.2.5.Final</version>
+  	</dependency>
+  	
+	<dependency>
+	  	<groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>6.0.5</version>
   	</dependency>
   	
   	<dependency>
@@ -35,11 +53,11 @@
 	 <version>2.2.10</version>
   	</dependency>
   	
-	  <dependency>
-	    <groupId>javaee</groupId>
-	    <artifactId>javaee-api</artifactId>
-	    <version>5</version>
-	  </dependency>
+	 <dependency>
+	   <groupId>javaee</groupId>
+	   <artifactId>javaee-api</artifactId>
+	   <version>5</version>
+	 </dependency>
   	
   	<!-- If you like to use the JSP Standard Tag Library (JSTL);
   	e.g. xmlns:f="http://xmlns.jcp.org/jsf/core;

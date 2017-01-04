@@ -1,0 +1,34 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+	<h:outputStylesheet library="css" name="todo.css" />
+	<title>EditToDo</title>
+</h:head>
+
+<body>
+
+    <h:form id="form">
+		<h:outputText value="Edit ToDo" class="tableheader"/>
+		<!-- //TODO -->
+		<br/>
+		
+		<h:inputText id="name" value="#{toDoMB.toDo.name}" ></h:inputText>
+		
+		<h:inputText id="deadline" value="#{toDoMB.toDo.date}" required="true">
+				<f:convertDateTime pattern="dd.MM.yyyy"/></h:inputText>
+				
+		<h:inputText id="interval" value="#{toDoMB.toDo.prio}">
+		<!--<f:validateLongRange minimum="#{intervallMB.intervall.min}" maximum="#{intervallMB.intervall.max}"--> 
+		/></h:inputText>
+    
+		<h:commandButton id="save" value="Save" action="#{toDoMB.save}"/>
+		<h:commandButton id="cancel" value="Cancel" action="#{toDoMB.cancel}" immediate="true"/>		
+	</h:form>
+
+</body>
+</html>

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14823101991530" configfile="/kbe-ue3-1/src/main/webapp/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="editToDoList.xhtml" id="pf14833612018300" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf148336331225114 pf148336331225115" inlinks="pf14833626472515 pf148336331225114" path="/editToDoList.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="editInterval.xhtml" id="pf14833612155304" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" outlinks="pf14833626472515" inlinks="pf148336331225115" path="/editInterval.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="editToDoList.xhtml" id="pf14833612018300" referenceLink="//@navigationRule.2/@navigationCase.1/@toViewId|" outlinks="pf148336331225114 pf148336331225115 pf14835225472652" inlinks="pf14833626472515 pf148336331225114 pf14835225294250 pf14835229696283" path="/editToDoList.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="editInterval.xhtml" id="pf14833612155304" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" outlinks="pf14833626472515" inlinks="pf148336331225115" path="/editInterval.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="editToDo.xhtml" id="pf14835225294261" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14835225294250 pf14835229696283" inlinks="pf14835225472652" path="/editToDo.xhtml"/>
   <links id="pf14833626472515" target="pf14833612018300" source="pf14833612155304" outcome="save"/>
   <links id="pf148336331225114" target="pf14833612018300" source="pf14833612018300" outcome="save"/>
   <links id="pf148336331225115" target="pf14833612155304" source="pf14833612018300" outcome="editInterval"/>
+  <links id="pf14835225294250" target="pf14833612018300" source="pf14835225294261" outcome="save"/>
+  <links id="pf14835225472652" target="pf14835225294261" source="pf14833612018300" outcome="editToDo"/>
+  <links id="pf14835229696283" target="pf14833612018300" source="pf14835225294261" outcome="cancel"/>
 </pageflow:Pageflow>

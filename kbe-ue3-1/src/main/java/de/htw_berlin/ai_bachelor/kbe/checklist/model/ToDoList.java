@@ -15,7 +15,7 @@ public class ToDoList implements Serializable {
 	
 	public ToDoList() {
 		super();
-		this.setToDos();
+		//this.setToDos();
 	}
 	
 	
@@ -39,6 +39,7 @@ public class ToDoList implements Serializable {
 		return  ret;
 	}
 
+	
 	private void setToDos() {
 		toDos.add(new ToDo("KBE: Aufgabenzettel 2 bearbeiten"));
 		toDos.add(new ToDo("KBE: Zweite Vorlesung nacharbeiten"));
