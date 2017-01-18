@@ -4,7 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.enterprise.context.ApplicationScoped;
 
+@ApplicationScoped
 public class ToDoList implements Serializable {
 	
 
@@ -16,6 +18,7 @@ public class ToDoList implements Serializable {
 	public ToDoList() {
 		super();
 		//this.setToDos();
+		System.out.println("ToDoList Const");
 	}
 	
 	public void addToDo(ToDo t)

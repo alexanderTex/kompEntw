@@ -2,11 +2,15 @@ package de.htw_berlin.ai_bachelor.kbe.checklist.mb;
 
 import java.io.Serializable;
 
-import javax.faces.bean.ApplicationScoped;
+//import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.inject.Named;
 
 import de.htw_berlin.ai_bachelor.kbe.checklist.model.Intervall;
 
+import javax.enterprise.context.ApplicationScoped;
+
+@Named
 @ManagedBean(name="intervallMB", eager=true)
 @ApplicationScoped
 public class IntervallMB implements Serializable {

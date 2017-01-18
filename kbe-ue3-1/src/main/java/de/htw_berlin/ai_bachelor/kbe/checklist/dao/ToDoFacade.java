@@ -2,14 +2,19 @@ package de.htw_berlin.ai_bachelor.kbe.checklist.dao;
 
 import java.util.List;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+
 import de.htw_berlin.ai_bachelor.kbe.checklist.model.ToDo;
 
+@ApplicationScoped
 public class ToDoFacade {
 	
+	@Inject
 	private ToDoDAO dao;
 	
 	public ToDoFacade(){
-		dao = new ToDoDAO();
+		System.out.println("ToDoFacade Const");
 	}
 
 	

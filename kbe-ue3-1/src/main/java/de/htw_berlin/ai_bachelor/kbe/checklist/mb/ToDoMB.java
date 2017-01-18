@@ -3,7 +3,8 @@ package de.htw_berlin.ai_bachelor.kbe.checklist.mb;
 import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 
 import de.htw_berlin.ai_bachelor.kbe.checklist.dao.ToDoFacade;
 import de.htw_berlin.ai_bachelor.kbe.checklist.model.ToDo;
@@ -15,7 +16,7 @@ public class ToDoMB implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private ToDo toDo;
-	
+	@Inject
 	private ToDoFacade facade;
 	
 	public ToDoMB() {
@@ -23,7 +24,6 @@ public class ToDoMB implements Serializable {
 		
 		
 		toDo = new ToDo("", false);
-		facade = new ToDoFacade();
 	}
 
 	public ToDo getToDo() {
@@ -31,6 +31,10 @@ public class ToDoMB implements Serializable {
 	}	
 	
 	public String save(){
+		if(facade == null)
+		{
+			System.out.println("FACADE IS NULL");
+		}
 		facade.saveToDo(toDo);
 		return "save";
 	}

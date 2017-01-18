@@ -8,24 +8,29 @@ import de.htw_berlin.ai_bachelor.kbe.checklist.model.ToDo;
 import de.htw_berlin.ai_bachelor.kbe.checklist.model.ToDoList;
 
 import javax.faces.bean.ManagedBean;
+import javax.inject.Inject;
+import javax.inject.Named;
 
-import javax.faces.bean.SessionScoped;
+//import javax.faces.bean.SessionScoped;
 
+import javax.enterprise.context.SessionScoped;
+
+@Named
 @ManagedBean(name="toDoListMB", eager=true)
 @SessionScoped
 public class ToDoListMB implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
+	@Inject
 	private ToDoFacade facade;
-	
+	@Inject
     private ToDoList toDoList;
     
 	public ToDoListMB() {
 		super();
-		toDoList = new ToDoList();
+		//toDoList = new ToDoList();
 		
-		facade = new ToDoFacade();
+		//facade = new ToDoFacade();
 	}    
 
 	public ToDoList getToDoList()

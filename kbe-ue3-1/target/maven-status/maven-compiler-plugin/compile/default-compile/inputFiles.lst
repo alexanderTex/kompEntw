@@ -1,5 +1,6 @@
 /home/05/49906/Kbe/kbeWorkspace/kbe-ue3-1/src/main/java/de/htw_berlin/ai_bachelor/kbe/checklist/dao/GenericDAO.java
 /home/05/49906/Kbe/kbeWorkspace/kbe-ue3-1/src/main/java/de/htw_berlin/ai_bachelor/kbe/IntervalValidator.java
+/home/05/49906/Kbe/kbeWorkspace/kbe-ue3-1/src/main/java/de/htw_berlin/ai_bachelor/kbe/checklist/dao/ToDoDaoProAnno.java
 /home/05/49906/Kbe/kbeWorkspace/kbe-ue3-1/src/main/java/de/htw_berlin/ai_bachelor/kbe/checklist/mb/IntervallMB.java
 /home/05/49906/Kbe/kbeWorkspace/kbe-ue3-1/src/main/java/de/htw_berlin/ai_bachelor/kbe/MyPhaseListener.java
 /home/05/49906/Kbe/kbeWorkspace/kbe-ue3-1/src/main/java/de/htw_berlin/ai_bachelor/kbe/checklist/mb/ToDoMB.java
