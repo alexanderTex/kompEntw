@@ -1,5 +1,7 @@
 package de.htw_berlin.ai_bachelor.kbe.checklist.dao;
 
+import java.util.List;
+
 import de.htw_berlin.ai_bachelor.kbe.checklist.model.ToDo;
 
 public class ToDoFacade {
@@ -7,7 +9,7 @@ public class ToDoFacade {
 	private ToDoDAO dao;
 	
 	public ToDoFacade(){
-		dao = new ToDoDAO(ToDo.class);
+		dao = new ToDoDAO();
 	}
 
 	
@@ -21,7 +23,7 @@ public class ToDoFacade {
 	public ToDo readToDo(int id){
 		dao.beginTransaction();
 		ToDo ret = dao.find(id);
-		dao.closeTransaction();		
+		dao.closeTransaction();
 		return ret;
 	}
 	
@@ -51,5 +53,16 @@ public class ToDoFacade {
 		dao.closeTransaction();
 	}
 	
+	
+	public List<ToDo> getAllToDos()
+	{
+		dao.beginTransaction();
+		
+		List<ToDo> toDos = dao.findAll();
+		
+		dao.closeTransaction();
+		
+		return toDos;
+	}
 	
 }

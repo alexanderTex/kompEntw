@@ -33,6 +33,21 @@ public class ToDo implements Serializable {
 	@MyInterval
 	private int prio;
 	
+	public ToDo() {
+		super();
+		this.name = "";
+		this.done = false;	
+		
+		Calendar c = Calendar.getInstance();
+		
+		c.add(Calendar.DATE, 1);
+		
+		this.date = c.getTime();
+		
+		prio = 1;
+		
+	}
+	
 	public ToDo(String name, boolean done) {
 		super();
 		this.name = name;
