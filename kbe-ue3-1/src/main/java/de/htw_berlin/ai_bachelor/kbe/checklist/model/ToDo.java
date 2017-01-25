@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.inject.Named;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;

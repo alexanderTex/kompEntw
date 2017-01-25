@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Named;
 
 @ApplicationScoped
 public class ToDoList implements Serializable {
@@ -29,6 +30,11 @@ public class ToDoList implements Serializable {
 	
 	public List<ToDo> getToDos() {
 		return toDos;
+	}
+	
+	public void clear()
+	{
+		toDos.clear();
 	}
 	
 	public int getToDoCount()

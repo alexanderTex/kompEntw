@@ -4,17 +4,21 @@ import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import de.htw_berlin.ai_bachelor.kbe.checklist.dao.ToDoFacade;
 import de.htw_berlin.ai_bachelor.kbe.checklist.model.ToDo;
 
-@ManagedBean(name="toDoMB", eager=true)
+@Named
+//@ManagedBean(name="toDoMB", eager=true)
 @RequestScoped
 public class ToDoMB implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
+	//@Inject
 	private ToDo toDo;
 	@Inject
 	private ToDoFacade facade;
@@ -23,7 +27,7 @@ public class ToDoMB implements Serializable {
 		super();
 		
 		
-		toDo = new ToDo("", false);
+		toDo = new ToDo();
 	}
 
 	public ToDo getToDo() {
@@ -35,7 +39,10 @@ public class ToDoMB implements Serializable {
 		{
 			System.out.println("FACADE IS NULL");
 		}
-		facade.saveToDo(toDo);
+		else
+		{
+			facade.saveToDo(toDo);
+		}
 		return "save";
 	}
 	

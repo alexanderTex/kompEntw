@@ -16,7 +16,8 @@ import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 
 @Named
-@ManagedBean(name="toDoListMB", eager=true)
+//Soll nicht rein
+//@ManagedBean(name="toDoListMB", eager=true)
 @SessionScoped
 public class ToDoListMB implements Serializable {
 
@@ -38,7 +39,7 @@ public class ToDoListMB implements Serializable {
 		
 		ArrayList<ToDo> todos = (ArrayList<ToDo>) facade.getAllToDos();
 		
-		toDoList = new ToDoList();
+		toDoList.clear();
 		
 		for(int i = 0; i < todos.size(); i++)
 		{
