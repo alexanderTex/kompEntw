@@ -23,7 +23,7 @@ public class MyPhaseListener implements PhaseListener {
 				System.out.println("Ich bin ein Postback!");
 			}				
 			
-			System.out.println("ViewRoot-ID : " + arg0.getFacesContext().getViewRoot().getId());
+			System.out.println("ViewRoot-ID : " + arg0.getFacesContext().getViewRoot().getViewId());
 			
 			
 			CountingVisitCallback cVC = new CountingVisitCallback();
@@ -37,7 +37,7 @@ public class MyPhaseListener implements PhaseListener {
 		}		
 		else if(arg0.getPhaseId() == PhaseId.RENDER_RESPONSE)
 		{
-			System.out.println("ViewRoot-ID : " + arg0.getFacesContext().getViewRoot().getId());
+			System.out.println("ViewRoot-ID : " + arg0.getFacesContext().getViewRoot().getViewId());
 			
 			CountingVisitCallback cVC = new CountingVisitCallback();
 			

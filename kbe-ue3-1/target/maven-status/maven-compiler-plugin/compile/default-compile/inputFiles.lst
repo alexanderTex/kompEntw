@@ -1,4 +1,10 @@
 /home/05/49906/Kbe/kbeWorkspace/kbe-ue3-1/src/main/java/de/htw_berlin/ai_bachelor/kbe/checklist/model/ToDo.java
+/home/05/49906/Kbe/kbeWorkspace/kbe-ue3-1/src/main/java/de/htw_berlin/ai_bachelor/kbe/IntervalValidator.java
+/home/05/49906/Kbe/kbeWorkspace/kbe-ue3-1/src/main/java/de/htw_berlin/ai_bachelor/kbe/checklist/mb/IntervallMB.java
 /home/05/49906/Kbe/kbeWorkspace/kbe-ue3-1/src/main/java/de/htw_berlin/ai_bachelor/kbe/checklist/model/ToDoList.java
+/home/05/49906/Kbe/kbeWorkspace/kbe-ue3-1/src/main/java/de/htw_berlin/ai_bachelor/kbe/MyPhaseListener.java
+/home/05/49906/Kbe/kbeWorkspace/kbe-ue3-1/src/main/java/de/htw_berlin/ai_bachelor/kbe/checklist/model/Intervall.java
 /home/05/49906/Kbe/kbeWorkspace/kbe-ue3-1/src/main/java/de/htw_berlin/ai_bachelor/kbe/checklist/mb/ToDoListMB.java
 /home/05/49906/Kbe/kbeWorkspace/kbe-ue3-1/src/main/java/de/htw_berlin/ai_bachelor/kbe/checklist/mb/DateTimeMB.java
+/home/05/49906/Kbe/kbeWorkspace/kbe-ue3-1/src/main/java/de/htw_berlin/ai_bachelor/kbe/checklist/CountingVisitCallback.java
+/home/05/49906/Kbe/kbeWorkspace/kbe-ue3-1/src/main/java/de/htw_berlin/ai_bachelor/kbe/MyInterval.java

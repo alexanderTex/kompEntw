@@ -30,11 +30,33 @@
 				<!-- //CheckBoxes -->
 				<h:selectBooleanCheckbox value="#{toDo.done}"></h:selectBooleanCheckbox>
 			</h:column>
+			<h:column>
+				<f:facet name="header">Deadline</f:facet>
+				<!-- //Time -->
+				<h:inputText id="deadline" value="#{toDo.date}" required="true">
+				<f:convertDateTime pattern="dd.MM.yyyy"/></h:inputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Prio</f:facet>
+				<!-- //Time -->
+				<h:inputText id="interval" value="#{toDo.prio}">
+				<!--<f:validateLongRange minimum="#{intervallMB.intervall.min}" maximum="#{intervallMB.intervall.max}"--> 
+				/></h:inputText>
+			</h:column>
+			<h:column>
+				<h:message for="deadline" errorClass="errorMessage" />
+			</h:column>
+			<h:column>
+				<h:message for="interval" errorClass="errorMessage" />
+			</h:column>
 		</h:dataTable>
 		<h:commandButton id="save" value="Save" action="#{toDoListMB.save}"/>
+		<h:commandButton id="cancel" value="Cancel" immediate="true"/>		
 		<p></p>
 		<h:link value="showTime" outcome="/showTime.xhtml" ></h:link>
-		<h:commandLink value="showTime" action="/showTime.xhtml" ></h:commandLink>		
+		<h:commandLink value="showTime" action="/showTime.xhtml" ></h:commandLink>
+		<p></p>	
+		<h:commandButton id="editInterval" value="Edit-Interval" action="#{toDoListMB.editInterval}" immediate="true"/>	
 	</h:form>
 
 </body>

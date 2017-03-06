@@ -4,10 +4,6 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
 
-<application>
-    <message-bundle>vvskMessages_de</message-bundle>
-</application>
-
 <navigation-rule>
 <!-- //TODO -->
 	<from-view-id>/editToDoList.xhtml</from-view-id>
@@ -15,12 +11,35 @@
 		<from-outcome>save</from-outcome>
 		<to-view-id>/editToDoList.xhtml</to-view-id>
 	</navigation-case>
+	<navigation-case>
+		<from-outcome>editInterval</from-outcome>
+		<to-view-id>/editInterval.xhtml</to-view-id>		
+	</navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+<!-- //TODO -->
+	<from-view-id>/editInterval.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>save</from-outcome>
+		<to-view-id>/editToDoList.xhtml</to-view-id>
+	</navigation-case>	
 </navigation-rule>
 
 <lifecycle>
-	<phase-listener>
-		de.htw_berlin.ai_bachelor.kbe.MyPhaseListener
-	</phase-listener>
+<!-- <phase-listener>
+		 de.htw_berlin.ai_bachelor.kbe.MyPhaseListener 
+	</phase-listener> -->
 </lifecycle>
+
+<application>
+	
+   <locale-config>
+      <default-locale>de_DE</default-locale>
+   </locale-config>
+   <message-bundle>
+	  	de.htw_berlin.ai_bachelor.kbe.checklist.messages_de
+  </message-bundle>
+</application>
 
 </faces-config>
