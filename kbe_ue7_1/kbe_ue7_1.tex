@@ -1,0 +1,169 @@
+% /===========================================================================\
+%
+%   preamble
+%
+% \===========================================================================/
+
+\documentclass[a4paper,letterpaper,10pt,ngerman]{scrartcl}
+
+% /=================================================================\
+%   	standard
+% \=================================================================/
+\usepackage{babel}
+\usepackage[utf8]{inputenc}	% using umlauts = encoding
+\usepackage[T1]{fontenc}
+
+\usepackage{mdwlist}	% to shrink the spaces between the items into a list
+\usepackage{blindtext}	% fill parts with blindtex
+\usepackage{verbatim}	%u sing in multiline comments
+
+\usepackage[german=guillemets]{csquotes}
+\usepackage[
+			backend=biber,
+			style=alphabetic-verb,
+			citestyle=alphabetic-verb
+			]
+			{biblatex}	% Einbinden von biblatex zur Literaturverwaltung.
+\addbibresource{literaturelibrary/kbeLitLib.bib}	% Literatursammlung
+
+\usepackage{amsmath}
+
+% /=================================================================\
+%   	commands
+% \=================================================================/
+\newcommand{\descitem}[1]{\textbf{#1}}	% style of description items
+
+
+\renewcommand{\labelenumi}{\alph{enumi}}
+% /===========================================================================\
+%
+%   init document
+%
+% \===========================================================================/
+
+\begin{document}
+
+% /===========================================================================\
+%
+%   title
+%
+% \===========================================================================/
+
+% don't want date printed
+\date{}
+
+% make title bold and 14 pt font (Latex default is non-bold, 16 pt)
+\title{\Large \bf Komponentenbasierte Entwicklung WiSe16/17 Übungsblatt 7: Expression Language und JSF-Lebenszyklus}
+
+\author{
+{\rm Alexander\ Lüdke}\\
+MatrNr. 548965
+\and
+{\rm Nils Brandt}\\
+MatrNr. 549906
+}
+
+\maketitle
+
+\thispagestyle{empty}
+
+% /===========================================================================\
+%
+%   main part
+%
+% \===========================================================================/
+\begin{enumerate}
+	\item EL2.1, was zuvor JSP2.1 gewesen war, schlägt eine Brücke zwischen den EL's aus JSP2.0 und JSF1.0, da sie diese in sich vereint.
+	
+	\item Sie kann in unterschiedlichen Phasen des Lifecycles vom Controller abgearbeitet werden. Die Expression \#{ myBean.myBeanPrope
+rty } wird in der  Render-Response Phase des Lifecycles evaluiert und anschließend wird der Value als Outputtext gerendert.
+
+	\item \#{myBean.myBeanProperty} => Wenn man den Wert ohne Metadaten angebene will.
+    <h:outputText value="\#{myBean.myBeanProperty }" .../> => Hier können zu dem hinterlegten Wert Metadaten hinterlegt werden.
+    
+    \item Die p's in der Bean var werden von links nach rechts durchlaufen und p3, welcher ein Attribut oder eine Methode sein kann, wird aufgerufen.
+    
+    \item 
+    \begin{itemize}
+    	\item Methodenaufruf
+    	\item Attributbearbeitung
+    	\begin{itemize}
+    		\item lesen
+    		\item schreiben
+    	\end{itemize}
+    \end{itemize} 
+    
+    \item
+    \begin{itemize*}
+    	\item Implicit Object sind "Umgebungsvariablen", die zum aktuellen Status ausgewertet werden können.
+    	\item Die folgenden werden zur Verfügung gestellt:
+    	\begin{itemize*}
+    		\item pageContext: The context for the JSP page. Provides access to various objects including:
+    		\item servletContext: The context for the JSP page’s servlet and any web components contained in the same application. See Accessing the Web Context.
+    		\item session: The session object for the client. See Maintaining Client State.
+    		\item request: The request triggering the execution of the JSP page. See Getting Information from Requests.
+    		\item response: The response returned by the JSP page. See Constructing Responses.
+    	\end{itemize*}
+    	\item In addition, several implicit objects are available that allow easy access to the following objects:
+    	\begin{itemize*}
+    		\item param: Maps a request parameter name to a single value
+    		\item paramValues: Maps a request parameter name to an array of values
+    		\item header: Maps a request header name to a single value
+    		\item headerValues: Maps a request header name to an array of values
+    		\item cookie: Maps a cookie name to a single cookie
+    		\item initParam: Maps a context initialization parameter name to a single value
+    	\end{itemize*}
+    	\item Finally, there are objects that allow access to the various scoped variables described in Using Scope Objects.
+		\begin{itemize*}
+			\item pageScope: Maps page-scoped variable names to their values
+			\item requestScope: Maps request-scoped variable names to their values
+			\item sessionScope: Maps session-scoped variable names to their values
+			\item applicationScope: Maps application-scoped variable names to their values
+		\end{itemize*}
+    \end{itemize*}
+    
+    \item Da die Werte mit NULL initialisiert werden, kann es dazu führen, dass wenn nach Werten gesucht wird, die nicht existieren, NULL als Rückgabewert ausgegeben werden.
+    
+    \item 
+    \begin{itemize*}
+    	\item Arithmetic: +, - (binary), *, / and div, \% and mod, - (unary)
+    	\item Logical: $and, \&, or, \|, not, !$
+    	\item Relational: ==, eq, !=, ne, <, lt, >, gt, <=, ge, >=, le. Comparisons can be made against other values, or against boolean, string, integer, or floating point literals.
+    	\item Conditional: A ? B : C. Evaluate B or C, depending on the result of the evaluation of A.
+    	\item (Empty: The empty operator is a prefix operation that can be used to determine whether a value is null or empty.)	
+	\end{itemize*}     
+    
+    \item
+    \begin{itemize}
+    	\item Falsche Verwendung der Operatoren
+    	\item Nutzung der reservieten Worte (or, not, eq, ...)
+    \end{itemize}
+    
+    \item
+    \begin{itemize}
+    	\item HTML5 Friendly Markup, 
+    	\item Resource Library Contracts and 
+    	\item Faces Flows
+    \end{itemize}
+    
+    \item Tomcat 7.0 uses the Jasper 2 JSP Engine to implement the JavaServer Pages 2.2 specification.
+    
+
+\end{enumerate}
+%\newpage
+
+% /===========================================================================\
+%
+% 	bibliography
+%
+% \===========================================================================/
+\printbibliography
+
+\end{document}
+
+
+
+
+
+
+
