@@ -114,7 +114,7 @@ Unterteilung der Applikation in drei miteinander verbundene Teile:
 * Komponenten (Definition)
     * Teil eines Systems
     * Besitzt spezifizierte Schnittstellen
-    * Unabhängig einsätzbar
+    * Unabhängig einsetzbar
     * keine Abhängigkeit zu anderen Komponenten
     ### Grafik s20 s21
 
@@ -133,3 +133,52 @@ Unterteilung der Applikation in drei miteinander verbundene Teile:
     * Die Tags der XHTML-Seite werden beim Aufruf auf dem Server
         1. in (Instanzen von) Komponenten umgesetzt und
         2. in einem Komponentenbaum angeordnet.
+---
+## 04
+
+* Cast ->
+### Grafik s11
+* Polymorphie ->
+### Grafik s12
+    * Konstruktoren werden nicht vererbt
+    * Bei der Ausführung eines Konstruktors werden autom. die Konstruktoren der Superklasse ausgeführt.
+    * Das System ruft dabei die Std.-Konstruktoren der Superklasse auf
+    * Alternativen:
+        * Default ergänzen wenn nicht vorhanden
+        * mittels super(...) aufrufen
+* ~! Typumwandlung s15
+* Interfaces
+    * Funktionalität für mehrere Klassen bereitstellen
+    * Keine Implementierung im Interface
+    * Keine Instanzerzeugung möglich
+    * Enhält nur Signaturen
+    * Variablen müssen Konstanten sein
+    * ~! s20
+    * Methoden haben immer den Sichtbarkeitesbereich public
+* Abstrakte Klassen
+    * Kein Instanzerzeugung
+    * Enthält abstrakte Methoden (nur Signaturen) und implementierte Methoden
+    * Strukturierung des Klassenbaums
+* ~! Beispiel Entwurfsproblem s29 bis s37
+* Entwurfsmuster Strategy s38 bis s39
+* Gründe für Entwurfsmuster
+    * Es ist eine Abstraktion
+    * Es schont mentale Ressourcen und vereinfacht das Verständnis
+    * Es vereinfacht die Kommunikation über Lösungen es Problems
+    * Es ermöglicht Wiederverwendung
+
+            "Entwurfsmuster [...] sind Beschreibungen zusammenarbeitender Objekte und Klassen, die maßgeschneidert sind, um ein [...] Entwurfsproblem in einem bestimmten Kontext zu lösen.“
+---
+## 05
+* Entwurfsmuster Singleton +  Sync s19 - s20
+    * Nur eine Instanz eines Objektes
+    * Wird genutzt im Bereich Ressourcen-Verwaltung(Caches, Treiber) und Services(Logging)
+* DRY-Prinzip
+    * Redundanzen vermeiden/reduzieren
+    * Code Änderungen werden nur einmal durchgeführt
+* Entwurfsmuster statische Fabrik-Methode
+### Grafik s28 und s30
+    * Vorteile
+        * Kohäsion der Klassen => Die Funktioinalitäten sind von einander abgegrenzt(jeder erfüllt nur eine explizite Aufgabe)
+        * Wenn ein neues Erzeugungsobjekt hinzukommt, muss lediglich die Fabrik angepasst werden
+        *
