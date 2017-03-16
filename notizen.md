@@ -116,10 +116,12 @@ Unterteilung der Applikation in drei miteinander verbundene Teile:
     * Besitzt spezifizierte Schnittstellen
     * Unabhängig einsetzbar
     * keine Abhängigkeit zu anderen Komponenten
-    ### Grafik s20 s21
+    ![](graphics/defi_komponente01.png)
+    ![](graphics/defi_komponente02.png)
+
 
 * Komponentenmodell (Definition)
-    ### Grafik s24
+![](graphics/defi_komponentenmodell.png)
 * Elemente eines Komponentenmodells
     * Interfaces von Komponenten
     * Informationen die benötigt werden, Komponenten zu nutzen
@@ -137,9 +139,9 @@ Unterteilung der Applikation in drei miteinander verbundene Teile:
 ## 04
 
 * Cast ->
-### Grafik s11
+![](graphics/cast.png)
 * Polymorphie ->
-### Grafik s12
+![](graphics/poly.png)
     * Konstruktoren werden nicht vererbt
     * Bei der Ausführung eines Konstruktors werden autom. die Konstruktoren der Superklasse ausgeführt.
     * Das System ruft dabei die Std.-Konstruktoren der Superklasse auf
@@ -170,15 +172,112 @@ Unterteilung der Applikation in drei miteinander verbundene Teile:
             "Entwurfsmuster [...] sind Beschreibungen zusammenarbeitender Objekte und Klassen, die maßgeschneidert sind, um ein [...] Entwurfsproblem in einem bestimmten Kontext zu lösen.“
 ---
 ## 05
-* Entwurfsmuster Singleton +  Sync s19 - s20
+* Entwurfsmuster Singleton +  Sync s19 - s20!
     * Nur eine Instanz eines Objektes
     * Wird genutzt im Bereich Ressourcen-Verwaltung(Caches, Treiber) und Services(Logging)
 * DRY-Prinzip
     * Redundanzen vermeiden/reduzieren
     * Code Änderungen werden nur einmal durchgeführt
 * Entwurfsmuster statische Fabrik-Methode
-### Grafik s28 und s30
+![](graphics/fac28.png)
+![](graphics/fac30.png)
     * Vorteile
         * Kohäsion der Klassen => Die Funktioinalitäten sind von einander abgegrenzt(jeder erfüllt nur eine explizite Aufgabe)
         * Wenn ein neues Erzeugungsobjekt hinzukommt, muss lediglich die Fabrik angepasst werden
-        *
+* Maven
+
+    Definition:
+        * Open source
+        * Standards-based:Convention over Configuration
+            * Stellt Default-Einstellungen zur Verfügung, die je nach Project angepasst werden können.
+        * Project management framework : In Maven werden die Prozesse zum Generieren von Applikationen definiert; dies erfolgt deklarativ.
+        * Simplifies:
+            * Ist modular aufgebaut.
+            * Für viele Anwendungen gibt es Plugins, die die eigentliche Aufgabe realisieren.
+
+    * Einheitliche Verzeichnisstruktur
+        * Wo und wie werden die Sourcen und das Compilat abgelegt?
+        * Wo werden Klassen für das Testen abgelegt?
+        * Wo sind Ressourcen (Text-/Konfigurationsfiles, Bilder, etc.) abgelegt?
+    * Abhängigkeiten (Dependencies):
+        * Welche Bibliotheken in welchen Versionen werden von den Entwicklern genutzt?
+        * Wo gibt es die aktuellen Bibliotheken zum Download und welche Abhängigkeiten haben diese wiederum?
+        * Wann werden die Bibliotheken genutzt? (Nur zum Testen oder müssen sie vielleicht mit ausgeliefert werden?)
+    * Einheitliche Konfiguration der verwendeten Werkzeuge:
+        * Welcher Compiler soll verwendet werden und wie wird er konfiguriert?
+        * Wie wird die Applikation mit welchen Parametern ausgeführt?
+        * Wie soll die ausgelieferte Applikation zusammengebunden werden?
+        * Wie soll das Ergebnis der durchgeführten Tests aussehen?
+    * Sonst
+        * Welche Infrastruktur wird für das Testen und welche für den Produktivbetrieb verwendet?
+        * Wie soll die Dokumentation des Projekts aussehen?
+        * Welche Schritte sollen nach dem erfolgreichen werden?
+        * Erzeugung von Projektinformation: Change Logs,Unit Test Reports, Dokumentation (z.B. Javadoc)
+
+    * pom.xml
+        * Enhält Projektkonfigurationen und -informationen.
+        * Dient zum Bau des Projektes
+    * Repsitories
+    ![](graphics/mavRep.png)
+    * Archetypes
+        * Projekt-Templates, die die Dateistruktur und die pom.xml, auf den entsprechenden Anwendungsfall zur Verfügung stellen.
+        * Bsp: mvn archetype:generate -DarchetypeArtifactId=maven-archetype-webapp
+    * Lebenszyklus "Build Lifecycle"
+        * Erzeugen der Projektartefakte in aufeinander folgenden Schritten(Goals)-> Zusammengehörige Goals = Plug-Ins(mvn compiler:compile)
+            * Das Verhalten von Plug-Ins kann in der pom.xml konfiguriert werden.
+        * Die nächst höhere Instanz sind Phasen, die die Abfolgen der Abarbeitung der Goals steuern.
+        * Default Live Circle
+            * validate: Prüfung, ob eine Projektstruktur gültig und vollständig ist
+            * compile: Kompilierung Quellcode
+            * test: Ausführung der Tests
+            * install: Installation des Softwarepakets im lokalen Maven-Repository
+            * deploy: Installation in entfernten Maven-Repositories
+---
+## 06
+* Speichern und Laden von Objekten durch einen eigenen Mechanismus
+    * Objekte mit den jeweiligen Abhängigkeiten werden gespeichert
+        * Eigenschaften:
+            * Markiert durch das Interface java.io.Serializable
+            * Schreibt in einen Byte-Strom mittels java.io.ObjectOutputStream Klasse und der darin befindlichen writeObject() Methode.
+            * Für die Deserialisierung wird aus der Klasse java.io.ObjectInputStream die Methode readObject() verwendet.
+    * De-/Serialisierung ("Save/Load")
+        * Ausnahmen werdend durch "private **transient** Image thumbnailImage;" gekennzeichnet:
+            * Threads
+            * Socket
+            * FileInputStream
+            * Speicheradressen
+            * Passwörter
+
+            Beispiel:
+                    class GalleryImage implements Serializable
+                    {
+                        private Image image;
+                        private transient Image thumbnailImage;
+
+                        private void generateThumbnail()
+                        {
+                            // Generate thumbnail.
+                        }
+
+                        private void readObject(ObjectInputStream inputStream)
+                                throws IOException, ClassNotFoundException
+                        {
+                            inputStream.defaultReadObject();
+                            generateThumbnail();
+                        }    
+                    }
+            ![](graphics/de_serial15.png)
+            * Versionierung / SUID
+                * Wird automatisch vergeben und beinhaltet den Hashcode aus Namen, Attributen, Parametern, Sichtbarkeit usw, die in einer UID gespeichert werden.
+                * Kann manuell überschrieben werden
+
+                        private static final long serialVersionUID= 1L;
+        * Generics
+            * Ziel: Dem Compiler mehr Informationen über die Typen zu geben.
+            * Als Generics-Variablen können keine primitiven Datentypen verwendet werden. Nur Typvariablen (Integer nicht int)
+            ![](graphics/gen27.png)
+            ![](graphics/gen28.png)
+            ![](graphics/gen29.png)
+            * Compiliervorgang:
+                * Überprüfung der Typisierung und die damit verbundenen Zuweisungen
+                * Erstellung von Java-Bytecode für den Generic-Quellcode-Klasse
