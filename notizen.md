@@ -281,3 +281,153 @@ Unterteilung der Applikation in drei miteinander verbundene Teile:
             * Compiliervorgang:
                 * Überprüfung der Typisierung und die damit verbundenen Zuweisungen
                 * Erstellung von Java-Bytecode für den Generic-Quellcode-Klasse
+---
+## 07
+
+* Reflection
+
+        In der Programmierung bedeutet Reflexion(reflection), dass ein Programm seine eigene Struktur kennt und diese, wenn nötig, modifizieren kann . Reflexion wird hier manchmal auch Introspektion genannt.
+
+    Und warum wollen wir Reflection haben?
+        * Das Reflection - Modell erlaubt es uns, Klassen und Objekte, die zur Laufzeit von der JVM im Speicher gehalten werden, zu untersuchen und in begrenztem Umfang zu modifizieren.
+        * Das können wir in unterschiedlichen Situationen gebrauchen:
+            * Schreiben von Hilfsprogrammen zum „Debuggen“.
+            * Dynamisches Laden von Klassen in eine Anwendung und die Erzeugung von zugehörigen Exemplaren .
+                * Einbinden von Klassen, die zum Compile - Zeitpunkt noch nicht bekannt sind.
+                * Kode kann hinsichtlich bekannter Interfaces geschrieben, die konkreten Klassen aber später nachgeladen werden (Angaben in Konfigurationsdateien).
+
+    *  Class-Objekt
+        * Ist eine Instanz von java.lang.Class-Objekt(Meta-Objekt)
+        * Beschreibt die Struktur einer Klasse/Interface und beinhalten Methoden z.B.
+            * getName() : Name der Klasse
+            * getFields() : Array der öffentlichen Felder
+        * Ermitteln eines Class-Objektes
+            * Class clazz = str.getClass();
+            * Class<?> clazz = str.getClass();
+            * Class clazz = String.class;
+            * Class<?> clazz = String.class;
+            * Class.forName(string);
+        ![](graphics/reflection_14.png)
+        ![](graphics/reflection_15.png)
+        * Modifizierer ermitteln mittels java.lang.reflect.Modifier Klasse (public, abstract, private, interface, ...)
+        * Objekt zur Laufzeit erzeugen ohne den Datentyp zur Compilezeit zu kennen.
+        ![](graphics/reflection_25.png)
+        ![](graphics/reflection_27.png)
+        ![](graphics/reflection_28.png)
+        * Methoden aufrufen
+        ![](graphics/reflection_29.png)
+        ![](graphics/reflection_30.png)
+* Annotationen "@" - Metadaten
+        * zusätzliche Semantik
+        * beeinflusst die Programmsteuerung nicht
+        * sind zusätzliche Modifizierer
+    * Annotationtypen
+    ![](graphics/reflection_36.png)
+
+---
+## 08
+* Lebenszyklus
+    * Request und Response-Arten
+        * Faces-Request : Abfrage eines JSF-Facelets
+            * Initial request
+                * der View wird direkt augerufen   
+            * Postback request
+                * das Formular wird von der zuvor augerufenden Seite versendet
+        * Non-Faces-Request : Alle anderen Anfragen (statisches HTML etc.)
+        * Faces-Response : Antwort mit einem JSF-Facelets
+        * Non-Faces-Response : Alle anderen Antworten (statisches HTML etc.)
+    * Bearbeitungsmodell
+        * Wird in Schritten(steps) druchlaufen
+        * Wobei Events an interessierte Event-Listener übergeben werden
+        ![](graphics/Lebenszyklus_13.png)
+    * Initial request
+        * Durchläuft die Phasen Restore View und Render Response
+    * Postback request
+        * Generell weden alle Phasen druchlaufen. Sie können jedoch durch Ereignisse/Situationen unterbrochen oder übersprungen werden.
+    * Ablauf einer Anfrag
+    ![](graphics/Lebenszyklus_30.png)
+    ![](graphics/Lebenszyklus_31.png)
+    * Den Lebenszyklus ändern "immediate-Attribut"
+        * Die jeweilige Aktion wird bereits in Phase 2 - Apply Requests durchgeführt
+            * Konvertierung/Validierung bei Eingabekomponenten
+            * Action-Methoden und Action-Listener bei Befehlskomponenten
+
+        wenn immediate=true ist(In einem View "Facelet").
+        ![](graphics/Lebenszyklus_38.png)
+    * Eventübersicht
+    ![](graphics/Lebenszyklus_43.png)
+    !~ ab s43 to read
+---
+## 09
+* Konvertierung wird standardmäßig vorgenommen durch Konverter
+    * standard Konverter
+    * selbst implementierte Konverter
+* Nach erfolgreicher Konvertierung findet, durch vorgefertigte oder selber geschriebene Validatoren, die Validierung statt.
+* Contraints sind Validatoren in Bean-Validation nach JSR-303 direkt in der Bean.
+    * @Max
+    * @NotNull
+---
+## 10-11
+* Dependency Injection (DI)
+    * Erstellen einer Instanz außerhalb der Anwendungsklasse(Oberklasse) und Hineinreichen dieser Instanz an die Anwendungsklasse.
+        * Constructor Injection
+        * Interface Injection
+        * Setter Injection
+    * DI-Vorteile: Loose Coupling
+        * Durch DI wird eine lose (loose coupling) Kopplung von Komponenten möglich gemacht
+            * Eine Klasse erzeugt benötigte Instanzen (einer anderen Klasse) nicht selber, sondern lässt sich diese geben.
+            * Hierbei verlangt die Klasse nur die Einhaltung bestimmter Schnittstellen und nicht Instanzen einer bestimmten Klasse.
+            * Hierdurch kann z.B. das Testen einer Klasse erleichtert werden.
+```java
+class Gehaege(){
+    Hase ha;
+    // Die Instanz einer Klasse wird "hereingereicht" anstatt sie selbst zu erzeugen -> Hase ha = new Hase();
+    public Gehaege(Hase hase){
+        ha  = hase;
+    }
+}
+
+```
+* Dependency Injection Principle (DIP)
+    * Einführen eines Interfaces, welches durch die Anwendungsklasse(Oberklasse) bestimmt wird
+    * Erstellung einer oder mehrerer Implementierungen.
+```java
+class Gehaege(){
+    // Interface spezifisches Object. Damit ist es moeglich Instanzen "rein zu // reichen", die das Interface Tier implementieren.
+    Tier ha;
+    public Gehaege(Tier tier){
+        ha = tier;
+    }
+}
+```
+* Dependency Injection Container (DIC)
+    * Ist das Konzept, welches die Abhängigkeiten automatisch erzeugt und bereitstellt.
+* Contexts and Dependency Injection
+    * Die Umsetzung des Konzept DIC in Java. Erzeugen/Bereitstellen von Instanzen und ihren kompletten Abhängigkeiten.
+    * Hauptaufgabe von CDI: Verwaltung von Beans mit definiertem Lebenszyklus
+    * Mechanismus: Beans können definiert und über typsichere DI miteinander verknüpft werden
+* Single-Responsibility-Prinzip (SRP)
+
+        Nach Robert C. Martin: In der objektorientierten Programmierung sagt das SRP aus, dass jede Klasse nur eine fest definierte Aufgabe zu erfüllen hat. In einer Klasse sollten lediglich Funktionen vorhanden sein, die direkt zur Erfüllung dieser Aufgabe beitragen . DI erlaubt es dem SRP zu folgen.
+
+---
+## 12-13
+* JPA
+    * Impedance Mismatch
+        * Sind Konflikte, die aus den Strukturunterschieden zwischen den Systemen entstehen hier:
+            * Objektorientierte Programmiersprache
+                * Vererbung
+                * Objektidentität
+                * Komplexe Beziehung
+            * Relationalen Datenbank
+                * Primärschlüssel
+                * Fremdschlüssel
+                * Fremdschlüsselspalten dürfen nicht mehrwertig sein
+    * Lösung: O/R-Mapping(Objekt-relationales Mapping)
+        * Es soll möglicht automatisiert und transparent("nicht sichtbar", "nicht merklich") sein.
+    ![](graphics/jpa_18.png)
+    ![](graphics/jpa_21.png)
+    * Um die Klasse als persistentes Objekt zu kennzeichnen benötigt man die Annotationen:
+        * @Entity oberhalb der Klasse und
+        * @Id oberhalb eines Attributes, welches als Primärschlüssel verwendet werden soll.
+        ![](graphics/jpa_23.png)
