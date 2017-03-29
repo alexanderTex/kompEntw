@@ -378,6 +378,7 @@ Unterteilung der Applikation in drei miteinander verbundene Teile:
             * Eine Klasse erzeugt benötigte Instanzen (einer anderen Klasse) nicht selber, sondern lässt sich diese geben.
             * Hierbei verlangt die Klasse nur die Einhaltung bestimmter Schnittstellen und nicht Instanzen einer bestimmten Klasse.
             * Hierdurch kann z.B. das Testen einer Klasse erleichtert werden.
+
 ```java
 class Gehaege(){
     Hase ha;
@@ -386,7 +387,6 @@ class Gehaege(){
         ha  = hase;
     }
 }
-
 ```
 * Dependency Injection Principle (DIP)
     * Einführen eines Interfaces, welches durch die Anwendungsklasse(Oberklasse) bestimmt wird
@@ -431,3 +431,14 @@ class Gehaege(){
         * @Entity oberhalb der Klasse und
         * @Id oberhalb eines Attributes, welches als Primärschlüssel verwendet werden soll.
         ![](graphics/jpa_23.png)
+//TODO
+* Persitenzdeskriptor (s27)
+* Persistence Units (s27)
+### Grafik s28
+* Entity Manager s29 s31 s33
+    * Resource-Local-Transaktionen s34
+    * zusätzliche Rechete des EntityManagers beim Speichern von transienten Entities s36
+    * Persistenzkontext = managed-context s37
+    * @Transient = Passwörter
+* Realisierungsmöglichkeiten von Vererbung in relationale DB s70
+* JPQL s76
