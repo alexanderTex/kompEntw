@@ -1,0 +1,31 @@
+ - Def Framework
+ - Model2  - Facelets / Servlet / Java Server Faces
+ - Exotische Annotationen
+ - Zweck von Komponenten ch2 - Faktoren ...
+ - Entwurfsmuster Defi ch4
+ - DRY Prinzip
+ - Maven - Archetypes - LifeCycle
+ - Reflection
+     - Vererbung ermitteln
+     - Contructor
+     - Method
+     - Variablen verändern
+ - Annotationstyp
+ - Lebenszyklus - Partial-State-Saving
+ - immediate=true
+     - checkButton
+     - cancelButton
+ - Konverter schreiben s23/24 ch09
+ - Validierer schreiben s29 ch09
+ToView
+- Praktischer Ablauf ab s30 bis s35
+~! Typumwandlung s15
+~! s20
+~! Beispiel Entwurfsproblem s29 bis s37
+Entwurfsmuster Strategy s38 bis s39
+- Lebenszyklus einer Anfrage
+- ~ ab s43 to read
+
+Fragen Montag
+- Vererbung von Generics
+-

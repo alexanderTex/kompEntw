@@ -166,7 +166,7 @@ Unterteilung der Applikation in drei miteinander verbundene Teile:
 * Gründe für Entwurfsmuster
     * Es ist eine Abstraktion
     * Es schont mentale Ressourcen und vereinfacht das Verständnis
-    * Es vereinfacht die Kommunikation über Lösungen es Problems
+    * Es vereinfacht die Kommunikation über Lösungen des Problems
     * Es ermöglicht Wiederverwendung
 
             "Entwurfsmuster [...] sind Beschreibungen zusammenarbeitender Objekte und Klassen, die maßgeschneidert sind, um ein [...] Entwurfsproblem in einem bestimmten Kontext zu lösen.“
@@ -187,6 +187,7 @@ Unterteilung der Applikation in drei miteinander verbundene Teile:
 * Maven
 
     Definition:
+
         * Open source
         * Standards-based:Convention over Configuration
             * Stellt Default-Einstellungen zur Verfügung, die je nach Project angepasst werden können.
@@ -241,7 +242,7 @@ Unterteilung der Applikation in drei miteinander verbundene Teile:
             * Schreibt in einen Byte-Strom mittels java.io.ObjectOutputStream Klasse und der darin befindlichen writeObject() Methode.
             * Für die Deserialisierung wird aus der Klasse java.io.ObjectInputStream die Methode readObject() verwendet.
     * De-/Serialisierung ("Save/Load")
-        * Ausnahmen werdend durch "private **transient** Image thumbnailImage;" gekennzeichnet:
+        * Ausnahmen werden durch "private **transient** Image thumbnailImage;" gekennzeichnet:
             * Threads
             * Socket
             * FileInputStream
@@ -288,12 +289,12 @@ Unterteilung der Applikation in drei miteinander verbundene Teile:
 
         In der Programmierung bedeutet Reflexion(reflection), dass ein Programm seine eigene Struktur kennt und diese, wenn nötig, modifizieren kann . Reflexion wird hier manchmal auch Introspektion genannt.
 
-    Und warum wollen wir Reflection haben?
-        * Das Reflection - Modell erlaubt es uns, Klassen und Objekte, die zur Laufzeit von der JVM im Speicher gehalten werden, zu untersuchen und in begrenztem Umfang zu modifizieren.
+    * Und warum wollen wir Reflection haben?
+        * Das Reflection-Modell erlaubt es uns, Klassen und Objekte, die zur Laufzeit von der JVM im Speicher gehalten werden, zu untersuchen und in begrenztem Umfang zu modifizieren.
         * Das können wir in unterschiedlichen Situationen gebrauchen:
             * Schreiben von Hilfsprogrammen zum „Debuggen“.
-            * Dynamisches Laden von Klassen in eine Anwendung und die Erzeugung von zugehörigen Exemplaren .
-                * Einbinden von Klassen, die zum Compile - Zeitpunkt noch nicht bekannt sind.
+            * Dynamisches Laden von Klassen in eine Anwendung und die Erzeugung von zugehörigen Exemplaren.
+                * Einbinden von Klassen, die zum Compile-Zeitpunkt noch nicht bekannt sind.
                 * Kode kann hinsichtlich bekannter Interfaces geschrieben, die konkreten Klassen aber später nachgeladen werden (Angaben in Konfigurationsdateien).
 
     *  Class-Objekt
@@ -318,9 +319,9 @@ Unterteilung der Applikation in drei miteinander verbundene Teile:
         ![](graphics/reflection_29.png)
         ![](graphics/reflection_30.png)
 * Annotationen "@" - Metadaten
-        * zusätzliche Semantik
-        * beeinflusst die Programmsteuerung nicht
-        * sind zusätzliche Modifizierer
+    * zusätzliche Semantik
+    * beeinflusst die Programmsteuerung nicht
+    * sind zusätzliche Modifizierer
     * Annotationtypen
     ![](graphics/reflection_36.png)
 
@@ -432,20 +433,43 @@ class Gehaege(){
         * @Id oberhalb eines Attributes, welches als Primärschlüssel verwendet werden soll.
         ![](graphics/jpa_23.png)
 //TODO
-* Persitenzdeskriptor (s27)
-* Persistence Units (s27)
-### Grafik s28
-* Entity Manager s29 s31 s33
-    * Resource-Local-Transaktionen s34
-    * zusätzliche Rechete des EntityManagers beim Speichern von transienten Entities s36
-    * Persistenzkontext = managed-context s37
+* Persitenzdeskriptor
+* Persistence Units
+![](graphics/jpa_27.png)
+![](graphics/jpa_28.png)
+* Entity Manager
+![](graphics/jpa_29.png)
+![](graphics/jpa_30.png)
+![](graphics/jpa_31.png)
+![](graphics/jpa_32.png)
+![](graphics/jpa_33.png)
+    * Resource-Local-Transaktionen
+    ![](graphics/jpa_34.png)
+    ![](graphics/jpa_35.png)
+    * zusätzliche Rechete des EntityManagers beim Speichern von transienten Entities
+    ![](graphics/jpa_36.png)
+    * Persistenzkontext = managed-context
+    ![](graphics/jpa_37.png)
+    ![](graphics/jpa_38.png)
+    ![](graphics/jpa_39.png)
+    ![](graphics/jpa_40.png)
+    ![](graphics/jpa_41.png)
+    ![](graphics/jpa_42.png)
     * @Transient = Passwörter
-* Realisierungsmöglichkeiten von Vererbung in relationale DB s70
-* JPQL s76
-
-
-
-
+    ![](graphics/jpa_43.png)
+* Realisierungsmöglichkeiten von Vererbung in relationale DB
+![](graphics/jpa_70.png)
+![](graphics/jpa_71.png)
+![](graphics/jpa_72.png)
+![](graphics/jpa_73.png)
+![](graphics/jpa_74.png)
+* JPQL
+![](graphics/jpa_76.png)
+![](graphics/jpa_77.png)
+![](graphics/jpa_78.png)
+![](graphics/jpa_79.png)
+![](graphics/jpa_80.png)
+![](graphics/jpa_81.png)
 ---
 Sourcecode
 ```java
