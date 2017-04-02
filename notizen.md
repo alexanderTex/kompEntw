@@ -442,3 +442,85 @@ class Gehaege(){
     * @Transient = Passwörter
 * Realisierungsmöglichkeiten von Vererbung in relationale DB s70
 * JPQL s76
+
+
+
+
+---
+Sourcecode
+```java
+    @Future(message="Das Fälligkeitsdatum muss in der Zukunft liegen")
+    private Date date = new Date(); //faelligkeitsdatum
+    // Anwendung der selbsgeschriebenen Annotation
+    @MyInterval
+    private int prio;
+
+    private static final long serialVersionUID = 1L;
+
+    public class ToDo implements Serializable {...}
+
+    // selbsgeschriebene Annotation
+    @Constraint(validatedBy = IntervalValidator.class)
+    // Anwendung auf ein Feld und nicht einer Klasse
+    // Alternativ waere .TYPE (nur auf Klassen)
+    @Target(ElementType.FIELD)
+    // Die Annotation ist NUR zur Laufzeit verfuegbar
+    // Alternativ waere .COMPILE
+    @Retention(RetentionPolicy.RUNTIME)
+    public @interface MyInterval {...}
+
+    public class IntervalValidator implements ConstraintValidator<MyInterval, Integer> {...}
+
+    IntervallMB bean = null;
+    FacesContext f = FacesContext.getCurrentInstance();
+    if(f != null)
+    {
+    	ELContext e = f.getELContext();
+    	bean = (IntervallMB)e.getELResolver().getValue(e, null, "intervallMB");
+    }
+
+    public final class CounterFactory {...}
+
+    @Test
+	public void incrementCounterSimple(){
+		String typ = "simple";		
+		assertEquals(CounterFactory.getCounterInstance(typ).getClass(), CounterSimple.class);
+	}
+
+    @Retention(RUNTIME)
+    @Target(TYPE)
+    public @interface CreationInfo {
+        String author() default "Wir";
+        String description();
+        String[] tags() default {};
+        boolean baseclass() default true;
+        boolean interfaces() default true;
+    }
+
+    // CDI - löst die Abhängikeiten auf
+    // Die Klasse ToDo muss daher mit @Named gekennzeichnet werden
+    @Inject
+    private ToDo template;
+```
+
+Views
+```HTML
+<h:outputText value="#{dateTimeMB.time}" />
+
+<h:commandButton id="save" value="Save" action="#{intervallMB.save}"/>
+
+<!-- faces-config.xml -->
+<navigation-rule>
+	<from-view-id>/editToDoList.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>save</from-outcome>
+		<to-view-id>/editToDoList.xhtml</to-view-id>
+	</navigation-case>
+	<navigation-case>
+		<from-outcome>editInterval</from-outcome>
+		<to-view-id>/editInterval.xhtml</to-view-id>		
+	</navigation-case>
+</navigation-rule>
+
+
+```
